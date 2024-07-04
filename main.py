@@ -45,7 +45,7 @@ async def main_handler(message: Message):
 @app.post(WEBHOOK_PATH)
 async def bot_webhook(update: dict):
     telegram_update = Update(**update)
-    await dp.process_update(telegram_update)
+    await dp.feed_update(bot, telegram_update)
 
 @app.on_event("shutdown")
 async def on_shutdown():
