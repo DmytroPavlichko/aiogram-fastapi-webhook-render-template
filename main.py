@@ -5,7 +5,7 @@ import os
 
 from aiogram import Bot, Dispatcher
 from aiogram.filters import CommandStart
-from aiogram.types import Message
+from aiogram.types import Message, Update
 
 TOKEN = os.getenv('TOKEN')
 
@@ -44,7 +44,7 @@ async def main_handler(message: Message):
 
 @app.post(WEBHOOK_PATH)
 async def bot_webhook(update: dict):
-    telegram_update = types.Update(**update)
+    telegram_update = Update(**update)
     Dispatcher.set_current(dp)
     Bot.set_current(bot)
     await dp.process_update(telegram_update)
