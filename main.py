@@ -29,7 +29,7 @@ async def on_startup():
 
 @dp.message(CommandStart())
 async def start_handler(message: Message):
-    await message.reply(f"Hello, {user_full_name}!")
+    await message.reply("Hello!")
 
 @dp.message()
 async def main_handler(message: Message):
