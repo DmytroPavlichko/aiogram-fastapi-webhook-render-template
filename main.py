@@ -49,7 +49,7 @@ async def bot_webhook(update: dict):
 
 @app.on_event("shutdown")
 async def on_shutdown():
-    await bot.get_session().close()
+    await bot.session.close()
 
 @app.get("/")
 def main_web_handler():
