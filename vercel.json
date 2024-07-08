@@ -1,0 +1,11 @@
+{
+  "env": {
+    "SERVERLESS": "True"
+  },
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/main.py"
+    },
+  ]
+}
